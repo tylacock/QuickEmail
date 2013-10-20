@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController ()
 @property UIPasteboard *pasteboard;
@@ -41,6 +43,26 @@
         self.textView.text = self.pasteboard.string;
     }
 }
+
+- (IBAction)sendMail:(id)sender
+{
+    MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+    
+    [composer setMailComposeDelegate:self];
+    [composer setSubject:@"HEY"];
+    [composer setMessageBody:self.textView.text isHTML:YES];
+    
+    [self presentModalViewController:composer animated:YES];
+    
+
+}
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
