@@ -460,6 +460,7 @@
 				151546561811870E0053915D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		151546571811870E0053915D /* Build configuration list for PBXNativeTarget "textTestTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +469,7 @@
 				151546591811870E0053915D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
