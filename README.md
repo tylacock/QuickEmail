@@ -6,7 +6,7 @@ Currently, it grabs the contents of the pasteboard and asks permission to paste 
 
 TO-DO:
 * Creating list shortcuts
-** Adding from contacts
-** Persisting lists
-** Selecting what lists use
-*** CollectionView?
+* Adding from contacts
+* Persisting lists
+* Selecting what lists use
+* CollectionView?
