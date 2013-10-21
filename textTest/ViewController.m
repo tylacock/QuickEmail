@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController ()
+@interface ViewController () <MFMailComposeViewControllerDelegate>
 @property UIPasteboard *pasteboard;
 @end
 
@@ -46,18 +46,41 @@
 
 - (IBAction)sendMail:(id)sender
 {
-    MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
-    
-    [composer setMailComposeDelegate:self];
-    [composer setSubject:@"HEY"];
-    [composer setMessageBody:self.textView.text isHTML:YES];
-    
-    [self presentModalViewController:composer animated:YES];
-    
-
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+        
+        [composer setMailComposeDelegate:self];
+        [composer setSubject:@"HEY"];
+        [composer setMessageBody:self.textView.text isHTML:YES];
+        
+        [self presentViewController:composer animated:YES completion:NULL];
+    }
 }
 
 
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
 
