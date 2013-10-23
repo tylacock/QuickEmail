@@ -12,6 +12,11 @@
 
 @interface ViewController () <MFMailComposeViewControllerDelegate>
 @property UIPasteboard *pasteboard;
+@property (nonatomic)  MFMailComposeViewController *composer;
+- (IBAction)setContact:(id)sender;
+@property NSArray *list1;
+
+
 @end
 
 @implementation ViewController
@@ -20,6 +25,8 @@
 {
     [self.textView becomeFirstResponder];
     [super viewDidLoad];
+    
+    
     
     self.pasteboard = [UIPasteboard generalPasteboard];
     if (self.pasteboard) {
@@ -32,7 +39,14 @@
         
     }
     
-    
+}
+
+- (void)setComposer:(MFMailComposeViewController *)composer
+{
+    _composer = composer;
+    if (!composer) {
+        composer = [[MFMailComposeViewController alloc] init];
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -44,16 +58,20 @@
     }
 }
 
+- (IBAction)setContact:(id)sender
+{
+    [self.composer setToRecipients:@[@"tylacock@gmail.com", @"tylacock@fairmontsupply.com"]];
+}
+
 - (IBAction)sendMail:(id)sender
 {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
         
-        [composer setMailComposeDelegate:self];
-        [composer setSubject:@"HEY"];
-        [composer setMessageBody:self.textView.text isHTML:YES];
         
-        [self presentViewController:composer animated:YES completion:NULL];
+        [self.composer setMailComposeDelegate:self];
+        [self.composer setMessageBody:self.textView.text isHTML:YES];
+        
+        [self presentViewController:self.composer animated:YES completion:NULL];
     }
 }
 
@@ -85,14 +103,10 @@
 
 
 
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end
