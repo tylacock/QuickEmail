@@ -80,6 +80,7 @@
     
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.textView becomeFirstResponder];
 }
 
 
