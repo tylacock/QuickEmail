@@ -35,7 +35,7 @@
 - (void)pasteSetup
 {
     self.pasteboard = [UIPasteboard generalPasteboard];
-    if ([self.pasteboard.string isEqualToString: nil]) {
+    if (![self.pasteboard.string isEqualToString: nil]) {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Paste?"
                                                           message:@"Would you like to paste your text?"
                                                          delegate:self
