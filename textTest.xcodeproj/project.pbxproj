@@ -22,6 +22,7 @@
 		1515464F1811870E0053915D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1515464D1811870E0053915D /* InfoPlist.strings */; };
 		151546511811870E0053915D /* textTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 151546501811870E0053915D /* textTestTests.m */; };
 		D02575DD18144BFB00B8A8E9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02575DC18144BFB00B8A8E9 /* MessageUI.framework */; };
+		D0CFFB411818BFD500F3DDCA /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CFFB401818BFD500F3DDCA /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		1515464E1811870E0053915D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		151546501811870E0053915D /* textTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textTestTests.m; sourceTree = "<group>"; };
 		D02575DC18144BFB00B8A8E9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D0CFFB3F1818BFD500F3DDCA /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		D0CFFB401818BFD500F3DDCA /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +119,13 @@
 		1515462B1811870E0053915D /* textTest */ = {
 			isa = PBXGroup;
 			children = (
-				151546341811870E0053915D /* AppDelegate.h */,
-				151546351811870E0053915D /* AppDelegate.m */,
 				151546371811870E0053915D /* Main.storyboard */,
 				1515463A1811870E0053915D /* ViewController.h */,
 				1515463B1811870E0053915D /* ViewController.m */,
 				1515463D1811870E0053915D /* Images.xcassets */,
 				1515462C1811870E0053915D /* Supporting Files */,
+				D0CFFB3F1818BFD500F3DDCA /* AboutViewController.h */,
+				D0CFFB401818BFD500F3DDCA /* AboutViewController.m */,
 			);
 			path = textTest;
 			sourceTree = "<group>";
@@ -130,6 +133,8 @@
 		1515462C1811870E0053915D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				151546341811870E0053915D /* AppDelegate.h */,
+				151546351811870E0053915D /* AppDelegate.m */,
 				1515462D1811870E0053915D /* textTest-Info.plist */,
 				1515462E1811870E0053915D /* InfoPlist.strings */,
 				151546311811870E0053915D /* main.m */,
@@ -255,6 +260,7 @@
 			files = (
 				1515463C1811870E0053915D /* ViewController.m in Sources */,
 				151546361811870E0053915D /* AppDelegate.m in Sources */,
+				D0CFFB411818BFD500F3DDCA /* AboutViewController.m in Sources */,
 				151546321811870E0053915D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
