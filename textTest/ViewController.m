@@ -11,9 +11,10 @@
 #import <MessageUI/MFMailComposeViewController.h>
 
 @interface ViewController () <MFMailComposeViewControllerDelegate>
+
+- (IBAction)setContact:(id)sender;
 @property UIPasteboard *pasteboard;
 @property (nonatomic)  MFMailComposeViewController *composer;
-- (IBAction)setContact:(id)sender;
 @property NSArray *list1;
 
 
@@ -26,10 +27,15 @@
     [self.textView becomeFirstResponder];
     [super viewDidLoad];
     
+    [self pasteSetup];
+    [self newMailSetup];
     
-    
+}
+
+- (void)pasteSetup
+{
     self.pasteboard = [UIPasteboard generalPasteboard];
-    if (self.pasteboard) {
+    if ([self.pasteboard.string isEqualToString: nil]) {
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Paste?"
                                                           message:@"Would you like to paste your text?"
                                                          delegate:self
@@ -38,9 +44,7 @@
         [message show];
         
     }
-    
-    [self newMailSetup];
-    
+
 }
 
 - (void)newMailSetup
