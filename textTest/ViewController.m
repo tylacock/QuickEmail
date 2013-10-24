@@ -38,16 +38,10 @@
         [message show];
         
     }
+    self.composer = [[MFMailComposeViewController alloc] init];
     
 }
 
-- (void)setComposer:(MFMailComposeViewController *)composer
-{
-    _composer = composer;
-    if (!composer) {
-        composer = [[MFMailComposeViewController alloc] init];
-    }
-}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
