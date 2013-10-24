@@ -38,8 +38,14 @@
         [message show];
         
     }
-    self.composer = [[MFMailComposeViewController alloc] init];
     
+    [self newMailSetup];
+    
+}
+
+- (void)newMailSetup
+{
+    self.composer = [[MFMailComposeViewController alloc] init];
 }
 
 
@@ -93,6 +99,7 @@
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
     [self.textView becomeFirstResponder];
+    [self newMailSetup];
 }
 
 
