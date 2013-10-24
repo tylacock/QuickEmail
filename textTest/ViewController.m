@@ -27,9 +27,8 @@
     [self.textView becomeFirstResponder];
     [super viewDidLoad];
     
-    [self pasteSetup];
     [self newMailSetup];
-    
+    [self pasteSetup];
 }
 
 - (void)pasteSetup
@@ -92,6 +91,7 @@
             break;
         case MFMailComposeResultSent:
             NSLog(@"Mail sent");
+            self.textView.text = @"";
             break;
         case MFMailComposeResultFailed:
             NSLog(@"Mail sent failure: %@", [error localizedDescription]);
