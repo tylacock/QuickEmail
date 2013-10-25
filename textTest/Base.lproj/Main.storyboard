@@ -56,6 +56,7 @@
                                 </state>
                                 <connections>
                                     <action selector="setContact:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jVm-yP-h4F"/>
+                                    <segue destination="Evd-So-Jdl" kind="modal" id="Vrt-q0-c4S"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hj-wl-4Zi">
@@ -87,6 +88,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="HCi-ZI-vzK">
+            <objects>
+                <viewController id="Evd-So-Jdl" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DZR-AC-hjc"/>
+                        <viewControllerLayoutGuide type="bottom" id="dRb-Or-aei"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5CK-hR-Pbf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gv-mC-c1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1330" y="318"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
