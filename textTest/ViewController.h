@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController <UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *textView;
+@property NSArray *list1;
 
 
 

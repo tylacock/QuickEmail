@@ -7,6 +7,7 @@
 //
 
 #import "AboutViewController.h"
+#import "ViewController.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
@@ -37,7 +38,10 @@
 }
 
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
-    
+//    ABMultiValueRef multi = ABRecordCopyValue(person, kABPersonEmailProperty);
+//    [list1 addObject:(__bridge NSString*)ABMultiValueCopyValueAtIndex(multi, 0)];
+//    [self dismissModalViewControllerAnimated:YES];
+//    
     return YES;
 }
 
