@@ -13,10 +13,10 @@
 @interface ViewController () <MFMailComposeViewControllerDelegate>
 
 - (IBAction)setContact:(id)sender;
+
 @property UIPasteboard *pasteboard;
 @property (nonatomic)  MFMailComposeViewController *composer;
 @property NSArray *list1;
-
 
 @end
 
